@@ -23,6 +23,7 @@ import org.derpfest.systemui.qs.tiles.AmbientDisplayTile
 import org.derpfest.systemui.qs.tiles.AODTile
 import org.derpfest.systemui.qs.tiles.CaffeineTile
 import org.derpfest.systemui.qs.tiles.CellularTile
+import org.derpfest.systemui.qs.tiles.CompassTile
 import org.derpfest.systemui.qs.tiles.DataSwitchTile
 import org.derpfest.systemui.qs.tiles.FastChargeTile
 import org.derpfest.systemui.qs.tiles.HeadsUpTile
@@ -65,6 +66,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(CellularTile.TILE_SPEC)
     fun bindCellularTile(cellularTile: CellularTile): QSTileImpl<*>
+
+    /** Inject CompassTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(CompassTile.TILE_SPEC)
+    fun bindCompassTile(compassTile: CompassTile): QSTileImpl<*>
 
     /** Inject DataSwitchTile into tileMap in QSModule */
     @Binds
