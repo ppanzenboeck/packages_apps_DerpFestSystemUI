@@ -29,6 +29,7 @@ import org.derpfest.systemui.qs.tiles.DataSwitchTile
 import org.derpfest.systemui.qs.tiles.FastChargeTile
 import org.derpfest.systemui.qs.tiles.HeadsUpTile
 import org.derpfest.systemui.qs.tiles.LocaleTile
+import org.derpfest.systemui.qs.tiles.MusicTile
 import org.derpfest.systemui.qs.tiles.PowerShareTile
 import org.derpfest.systemui.qs.tiles.PreferredNetworkTile
 import org.derpfest.systemui.qs.tiles.ReadingModeTile
@@ -100,6 +101,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(LocaleTile.TILE_SPEC)
     fun bindLocaleTile(localeTile: LocaleTile): QSTileImpl<*>
+
+    /** Inject MusicTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(MusicTile.TILE_SPEC)
+    fun bindMusicTile(musicTile: MusicTile): QSTileImpl<*>
 
     /** Inject PowerShareTile into tileMap in QSModule */
     @Binds
