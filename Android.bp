@@ -21,6 +21,9 @@ soong_config_module_type_import {
 
 android_library {
     name: "SystemUIGo-core",
+    resource_dirs: [
+        "res",
+    ],
     static_libs: [
         "//frameworks/base/packages/SystemUI:SystemUI-core",
         "//frameworks/base/packages/SystemUI:SystemUIPluginLib",
