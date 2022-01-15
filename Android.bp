@@ -1,0 +1,77 @@
+//
+// Copyright (C) 2022 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//
+
+soong_config_module_type_import {
+    from: "frameworks/base/packages/SystemUI/Android.bp",
+    module_types: ["systemui_optimized_java_defaults"],
+}
+
+android_library {
+    name: "SystemUIGo-core",
+    static_libs: [
+        "//frameworks/base/packages/SystemUI:SystemUI-core",
+        "//frameworks/base/packages/SystemUI:SystemUIPluginLib",
+        "//frameworks/base/packages/SystemUI:SystemUISharedLib",
+    ],
+    manifest: "AndroidManifest.xml",
+}
+
+systemui_optimized_java_defaults {
+    name: "SystemUIGo_app_defaults",
+    soong_config_variables: {
+        SYSTEMUI_OPTIMIZE_JAVA: {
+            optimize: {
+                enabled: true,
+                optimize: true,
+                shrink: true,
+                proguard_flags_files: ["proguard.flags"],
+            },
+            conditions_default: {
+                optimize: {
+                    proguard_flags_files: ["proguard.flags"],
+                },
+            },
+        },
+    },
+}
+
+android_app {
+    name: "SystemUIGo",
+    defaults: [
+        "platform_app_defaults",
+        "SystemUIGo_app_defaults",
+    ],
+    static_libs: [
+        "SystemUIGo-core"
+    ],
+    overrides: [
+        "SystemUI",
+    ],
+    resource_dirs: [],
+
+    platform_apis: true,
+    system_ext_specific: true,
+    certificate: "platform",
+    privileged: true,
+
+    kotlincflags: ["-Xjvm-default=enable"],
+
+    dxflags: ["--multi-dex"],
+    required: [
+        "privapp_whitelist_com.android.systemui",
+    ],
+}
+
