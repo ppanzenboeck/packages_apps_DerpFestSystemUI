@@ -25,15 +25,19 @@ soong_config_module_type_import {
 
 android_library {
     name: "SystemUIGo-core",
+    srcs: [
+        "src/**/*.java",
+    ],
     resource_dirs: [
         "res",
     ],
     static_libs: [
-        "//frameworks/base/packages/SystemUI:SystemUI-core",
-        "//frameworks/base/packages/SystemUI:SystemUIPluginLib",
-        "//frameworks/base/packages/SystemUI:SystemUISharedLib",
+        "SystemUI-core",
+        "SystemUIPluginLib",
+        "SystemUISharedLib",
     ],
     manifest: "AndroidManifest.xml",
+    plugins: ["dagger2-compiler"],
 }
 
 systemui_optimized_java_defaults {
