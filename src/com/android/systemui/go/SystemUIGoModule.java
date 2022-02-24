@@ -181,7 +181,8 @@ public abstract class SystemUIGoModule {
             KeyguardBypassController bypassController,
             GroupMembershipManager groupManager,
             VisualStabilityProvider visualStabilityProvider,
-            ConfigurationController configurationController) {
+            ConfigurationController configurationController,
+            @Main Handler handler) {
         return new HeadsUpManagerPhone(
                 context,
                 headsUpManagerLogger,
@@ -189,7 +190,8 @@ public abstract class SystemUIGoModule {
                 bypassController,
                 groupManager,
                 visualStabilityProvider,
-                configurationController
+                configurationController,
+                handler
         );
     }
 
