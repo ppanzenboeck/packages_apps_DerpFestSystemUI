@@ -25,7 +25,7 @@ import com.android.systemui.dagger.SysUISingleton;
 import com.android.systemui.dagger.SystemUIModule;
 import com.android.systemui.keyguard.dagger.KeyguardModule;
 import com.android.systemui.recents.RecentsModule;
-import com.android.systemui.statusbar.dagger.StatusBarModule;
+import com.android.systemui.statusbar.dagger.CentralSurfacesModule;
 
 import dagger.Subcomponent;
 
@@ -42,7 +42,7 @@ import dagger.Subcomponent;
         SystemUIGoCoreStartableModule.class,
         KeyguardModule.class,
         RecentsModule.class,
-        StatusBarModule.class,
+        CentralSurfacesModule.class,
         SystemUIGoModule.class})
 public interface SystemUIGoComponent extends SysUIComponent {
 
