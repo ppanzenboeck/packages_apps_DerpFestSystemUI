@@ -21,7 +21,7 @@
 
     <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
     <string name="quick_settings_tiles_stock" translatable="false">
-        internet,wifi,cell,bt,flashlight,dnd,alarm,airplane,nfc,controls,wallet,rotation,battery,cast,screenrecord,mictoggle,cameratoggle,location,hotspot,inversion,saver,dark,work,night,reverse,reduce_brightness,qr_code_scanner,onehanded,color_correction,dream,font_scaling,ambient_display,aod,caffeine,compass,dataswitch,dns,heads_up,locale,powershare,reading_mode,screenshot,sound,sync,usb_tether,volume_control,vpn,vpn_tethering,fastcharge
+        internet,wifi,cell,bt,flashlight,dnd,alarm,airplane,nfc,controls,wallet,rotation,battery,cast,screenrecord,mictoggle,cameratoggle,location,hotspot,inversion,saver,dark,work,night,reverse,reduce_brightness,qr_code_scanner,onehanded,color_correction,dream,font_scaling,ambient_display,aod,caffeine,compass,dataswitch,dns,heads_up,locale,powershare,preferred_network,reading_mode,screenshot,sound,sync,usb_tether,volume_control,vpn,vpn_tethering,fastcharge
     </string>
 
     <!-- Determines whether the shell features all run on another thread. -->
