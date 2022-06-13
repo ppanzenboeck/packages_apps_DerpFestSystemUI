@@ -45,6 +45,7 @@ import com.android.systemui.qs.dagger.QSModule;
 import com.android.systemui.qs.tileimpl.QSFactoryImpl;
 import com.android.systemui.recents.Recents;
 import com.android.systemui.recents.RecentsImplementation;
+import com.android.systemui.screenshot.ReferenceScreenshotModule;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.NotificationLockscreenUserManager;
 import com.android.systemui.statusbar.NotificationLockscreenUserManagerImpl;
@@ -89,6 +90,7 @@ import dagger.Provides;
         MediaModule.class,
         PowerModule.class,
         QSModule.class,
+        ReferenceScreenshotModule.class,
         StartCentralSurfacesModule.class,
         VolumeModule.class
 })
