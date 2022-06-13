@@ -16,8 +16,6 @@
 
 package com.android.systemui.go;
 
-import android.content.Context;
-
 import com.android.systemui.SystemUIFactory;
 import com.android.systemui.dagger.GlobalRootComponent;
 import com.android.systemui.go.DaggerSystemUIGoGlobalRootComponent;
@@ -28,9 +26,7 @@ import com.android.systemui.go.DaggerSystemUIGoGlobalRootComponent;
  */
 final public class SystemUIGoFactory extends SystemUIFactory {
     @Override
-    protected GlobalRootComponent buildGlobalRootComponent(Context context) {
-        return DaggerSystemUIGoGlobalRootComponent.builder()
-                .context(context)
-                .build();
+    protected GlobalRootComponent.Builder getGlobalRootComponentBuilder() {
+        return DaggerSystemUIGoGlobalRootComponent.builder();
     }
 }
