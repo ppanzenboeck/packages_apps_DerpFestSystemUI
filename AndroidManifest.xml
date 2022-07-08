@@ -20,8 +20,4 @@
           package="com.android.systemui"
           android:sharedUserId="android.uid.systemui"
           coreApp="true">
-    <application
-        tools:replace="android:appComponentFactory"
-        android:appComponentFactory="com.android.systemui.go.SystemUIGoAppComponentFactory">
-    </application>
 </manifest>
