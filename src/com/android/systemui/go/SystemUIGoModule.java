@@ -36,6 +36,7 @@ import com.android.systemui.demomode.DemoModeController;
 import com.android.systemui.dock.DockManager;
 import com.android.systemui.dock.DockManagerImpl;
 import com.android.systemui.doze.DozeHost;
+import com.android.systemui.dump.DumpManager;
 import com.android.systemui.media.dagger.MediaModule;
 import com.android.systemui.navigationbar.gestural.GestureModule;
 import com.android.systemui.plugins.qs.QSFactory;
@@ -119,6 +120,7 @@ public abstract class SystemUIGoModule {
             PowerManager powerManager,
             BroadcastDispatcher broadcastDispatcher,
             DemoModeController demoModeController,
+            DumpManager dumpManager,
             @Main Handler mainHandler,
             @Background Handler bgHandler) {
         BatteryController bC = new BatteryControllerImpl(
@@ -127,6 +129,7 @@ public abstract class SystemUIGoModule {
                 powerManager,
                 broadcastDispatcher,
                 demoModeController,
+                dumpManager,
                 mainHandler,
                 bgHandler);
         bC.init();
