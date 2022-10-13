@@ -26,6 +26,7 @@ import com.android.systemui.dagger.SystemUIModule;
 import com.android.systemui.keyguard.dagger.KeyguardModule;
 import com.android.systemui.recents.RecentsModule;
 import com.android.systemui.statusbar.dagger.CentralSurfacesModule;
+import com.android.systemui.statusbar.QsFrameTranslateModule;
 
 import dagger.Subcomponent;
 
@@ -43,6 +44,7 @@ import dagger.Subcomponent;
         KeyguardModule.class,
         RecentsModule.class,
         CentralSurfacesModule.class,
+        QsFrameTranslateModule.class,
         SystemUIGoModule.class})
 public interface SystemUIGoComponent extends SysUIComponent {
 
