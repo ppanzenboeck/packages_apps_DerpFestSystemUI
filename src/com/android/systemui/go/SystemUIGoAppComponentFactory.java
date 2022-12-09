@@ -18,19 +18,19 @@ package com.android.systemui.go;
 
 import android.content.Context;
 
-import com.android.systemui.SystemUIFactory;
-import com.android.systemui.dagger.GlobalRootComponent;
-import com.android.systemui.go.DaggerSystemUIGoGlobalRootComponent;
+import com.android.systemui.SystemUIAppComponentFactoryBase;
+import com.android.systemui.SystemUIInitializer;
 
 /**
- * Go variant {@link SystemUIFactory}, that substitutes default {@link GlobalRootComponent} for
- * {@link SystemUIGoGlobalRootComponent}
+ * Starts up SystemUI using {@link SystemUIGoInitializer}.
+ *
+ * The {@link SystemUIAppComponentFactoryBase} is required for proper SystemUI functionality.
+ *
+ * @see SystemUIAppComponentFactoryBase
  */
-final public class SystemUIGoFactory extends SystemUIFactory {
+public class SystemUIGoAppComponentFactory extends SystemUIAppComponentFactoryBase {
     @Override
-    protected GlobalRootComponent buildGlobalRootComponent(Context context) {
-        return DaggerSystemUIGoGlobalRootComponent.builder()
-                .context(context)
-                .build();
+    protected SystemUIInitializer createSystemUIInitializer(Context context) {
+        return new SystemUIGoInitializer(context);
     }
 }
