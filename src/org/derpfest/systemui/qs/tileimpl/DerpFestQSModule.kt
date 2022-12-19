@@ -29,6 +29,7 @@ import org.derpfest.systemui.qs.tiles.FastChargeTile
 import org.derpfest.systemui.qs.tiles.HeadsUpTile
 import org.derpfest.systemui.qs.tiles.PowerShareTile
 import org.derpfest.systemui.qs.tiles.ReadingModeTile
+import org.derpfest.systemui.qs.tiles.ScreenshotTile
 import org.derpfest.systemui.qs.tiles.SoundTile
 import org.derpfest.systemui.qs.tiles.SyncTile
 import org.derpfest.systemui.qs.tiles.UsbTetherTile
@@ -102,6 +103,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(ReadingModeTile.TILE_SPEC)
     fun bindReadingModeTile(readingModeTile: ReadingModeTile): QSTileImpl<*>
+
+    /** Inject ScreenshotTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(ScreenshotTile.TILE_SPEC)
+    fun bindScreenshotTile(screenshotTile: ScreenshotTile): QSTileImpl<*>
 
     /** Inject SoundTile into tileMap in QSModule */
     @Binds
