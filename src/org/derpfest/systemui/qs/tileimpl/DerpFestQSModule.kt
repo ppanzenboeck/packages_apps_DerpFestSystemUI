@@ -27,6 +27,7 @@ import org.derpfest.systemui.qs.tiles.CompassTile
 import org.derpfest.systemui.qs.tiles.DataSwitchTile
 import org.derpfest.systemui.qs.tiles.FastChargeTile
 import org.derpfest.systemui.qs.tiles.HeadsUpTile
+import org.derpfest.systemui.qs.tiles.LocaleTile
 import org.derpfest.systemui.qs.tiles.PowerShareTile
 import org.derpfest.systemui.qs.tiles.ReadingModeTile
 import org.derpfest.systemui.qs.tiles.ScreenshotTile
@@ -91,6 +92,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(HeadsUpTile.TILE_SPEC)
     fun bindHeadsUpTile(headsUpTile: HeadsUpTile): QSTileImpl<*>
+
+    /** Inject LocaleTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(LocaleTile.TILE_SPEC)
+    fun bindLocaleTile(localeTile: LocaleTile): QSTileImpl<*>
 
     /** Inject PowerShareTile into tileMap in QSModule */
     @Binds
