@@ -21,6 +21,7 @@ import com.android.systemui.qs.tileimpl.QSTileImpl
 
 import org.derpfest.systemui.qs.tiles.AmbientDisplayTile
 import org.derpfest.systemui.qs.tiles.AODTile
+import org.derpfest.systemui.qs.tiles.BluetoothDialogTile
 import org.derpfest.systemui.qs.tiles.CaffeineTile
 import org.derpfest.systemui.qs.tiles.CellularTile
 import org.derpfest.systemui.qs.tiles.DataSwitchTile
@@ -51,6 +52,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(AODTile.TILE_SPEC)
     fun bindAODTile(aodTile: AODTile): QSTileImpl<*>
+
+    /** Inject BluetoothDialogTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(BluetoothDialogTile.TILE_SPEC)
+    fun bindBluetoothDialogTile(bluetoothDialogTile: BluetoothDialogTile): QSTileImpl<*>
 
     /** Inject CaffeineTile into tileMap in QSModule */
     @Binds
