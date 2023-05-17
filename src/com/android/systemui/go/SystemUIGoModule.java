@@ -32,6 +32,7 @@ import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.dock.DockManager;
 import com.android.systemui.dock.DockManagerImpl;
 import com.android.systemui.doze.DozeHost;
+import com.android.systemui.globalactions.ShutdownUiModule;
 import com.android.systemui.media.dagger.MediaModule;
 import com.android.systemui.navigationbar.gestural.GestureModule;
 import com.android.systemui.plugins.qs.QSFactory;
@@ -90,6 +91,7 @@ import dagger.Provides;
         PowerModule.class,
         QSModule.class,
         ReferenceScreenshotModule.class,
+        ShutdownUiModule.class,
         StartCentralSurfacesModule.class,
         StatusBarEventsModule.class,
         VolumeModule.class
