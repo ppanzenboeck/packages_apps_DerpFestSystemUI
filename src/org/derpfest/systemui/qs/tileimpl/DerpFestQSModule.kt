@@ -22,11 +22,13 @@ import com.android.systemui.qs.tileimpl.QSTileImpl
 import org.derpfest.systemui.qs.tiles.AmbientDisplayTile
 import org.derpfest.systemui.qs.tiles.AODTile
 import org.derpfest.systemui.qs.tiles.CaffeineTile
+import org.derpfest.systemui.qs.tiles.CellularTile
 import org.derpfest.systemui.qs.tiles.HeadsUpTile
 import org.derpfest.systemui.qs.tiles.PowerShareTile
 import org.derpfest.systemui.qs.tiles.ReadingModeTile
 import org.derpfest.systemui.qs.tiles.SyncTile
 import org.derpfest.systemui.qs.tiles.UsbTetherTile
+import org.derpfest.systemui.qs.tiles.WifiTile
 
 import dagger.Binds
 import dagger.Module
@@ -52,6 +54,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(CaffeineTile.TILE_SPEC)
     fun bindCaffeineTile(caffeineTile: CaffeineTile): QSTileImpl<*>
+
+    /** Inject CellularTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(CellularTile.TILE_SPEC)
+    fun bindCellularTile(cellularTile: CellularTile): QSTileImpl<*>
 
     /** Inject HeadsUpTile into tileMap in QSModule */
     @Binds
@@ -82,5 +90,11 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(UsbTetherTile.TILE_SPEC)
     fun bindUsbTetherTile(usbTetherTile: UsbTetherTile): QSTileImpl<*>
+
+    /** Inject WifiTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(WifiTile.TILE_SPEC)
+    fun bindWifiTile(wifiTile: WifiTile): QSTileImpl<*>
 
 }
