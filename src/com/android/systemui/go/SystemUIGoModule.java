@@ -72,6 +72,7 @@ import com.android.systemui.statusbar.policy.IndividualSensorPrivacyControllerIm
 import com.android.systemui.statusbar.policy.SensorPrivacyController;
 import com.android.systemui.statusbar.policy.SensorPrivacyControllerImpl;
 import com.android.systemui.volume.dagger.VolumeModule;
+import com.android.systemui.wallpapers.dagger.WallpaperModule;
 
 import javax.inject.Named;
 
@@ -94,6 +95,7 @@ import dagger.Provides;
         ShutdownUiModule.class,
         StartCentralSurfacesModule.class,
         StatusBarEventsModule.class,
+        WallpaperModule.class,
         VolumeModule.class
 })
 public abstract class SystemUIGoModule {
