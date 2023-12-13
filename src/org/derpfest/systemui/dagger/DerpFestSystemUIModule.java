@@ -72,6 +72,8 @@ import com.android.systemui.statusbar.policy.SensorPrivacyControllerImpl;
 import com.android.systemui.volume.dagger.VolumeModule;
 import com.android.systemui.wallpapers.dagger.WallpaperModule;
 
+import org.derpfest.systemui.qs.tileimpl.DerpFestQSModule;
+
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
@@ -96,7 +98,8 @@ import javax.inject.Named;
         StartCentralSurfacesModule.class,
         VolumeModule.class,
         WallpaperModule.class,
-        KeyboardShortcutsModule.class
+        KeyboardShortcutsModule.class,
+        DerpFestQSModule.class
 })
 public abstract class DerpFestSystemUIModule {
 
