@@ -21,6 +21,7 @@ package {
 android_library {
     name: "SystemUIGo-core",
     srcs: [
+        "src/**/*.kt",
         "src/**/*.java",
     ],
     resource_dirs: [
