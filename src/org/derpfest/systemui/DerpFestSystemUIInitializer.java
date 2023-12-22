@@ -14,23 +14,25 @@
  * limitations under the License.
  */
 
-package com.android.systemui.go;
+package org.derpfest.systemui;
 
 import android.content.Context;
 
-import com.android.systemui.SystemUIAppComponentFactoryBase;
 import com.android.systemui.SystemUIInitializer;
+import com.android.systemui.dagger.GlobalRootComponent;
+import org.derpfest.systemui.DaggerDerpFestGlobalRootComponent;
 
 /**
- * Starts up SystemUI using {@link SystemUIGoInitializer}.
- *
- * The {@link SystemUIAppComponentFactoryBase} is required for proper SystemUI functionality.
- *
- * @see SystemUIAppComponentFactoryBase
+ * DerpFest variant {@link SystemUIInitializer}, that substitutes default {@link GlobalRootComponent} for
+ * {@link DerpFestGlobalRootComponent}
  */
-public class SystemUIGoAppComponentFactory extends SystemUIAppComponentFactoryBase {
+final public class DerpFestSystemUIInitializer extends SystemUIInitializer {
+    public DerpFestSystemUIInitializer(Context context) {
+        super(context);
+    }
+
     @Override
-    protected SystemUIInitializer createSystemUIInitializer(Context context) {
-        return new SystemUIGoInitializer(context);
+    protected GlobalRootComponent.Builder getGlobalRootComponentBuilder() {
+        return DaggerDerpFestGlobalRootComponent.builder();
     }
 }

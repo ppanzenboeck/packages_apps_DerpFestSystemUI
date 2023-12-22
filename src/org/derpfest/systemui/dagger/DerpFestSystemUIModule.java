@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.go;
+package org.derpfest.systemui;
 
 import static com.android.systemui.Dependency.ALLOW_NOTIFICATION_LONG_PRESS_NAME;
 import static com.android.systemui.Dependency.LEAK_REPORT_EMAIL_NAME;
@@ -98,11 +98,7 @@ import dagger.Provides;
         WallpaperModule.class,
         VolumeModule.class
 })
-public abstract class SystemUIGoModule {
-
-    @Binds
-    abstract GlobalRootComponent bindGlobalRootComponent(
-            SystemUIGoGlobalRootComponent globalRootComponent);
+public abstract class DerpFestSystemUIModule {
 
     @SysUISingleton
     @Provides

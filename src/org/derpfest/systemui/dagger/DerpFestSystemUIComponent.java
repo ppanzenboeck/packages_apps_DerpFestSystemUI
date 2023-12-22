@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.go;
+package org.derpfest.systemui;
 
 import com.android.systemui.dagger.DefaultActivityBinder;
 import com.android.systemui.dagger.DefaultBroadcastReceiverBinder;
@@ -22,6 +22,7 @@ import com.android.systemui.dagger.DefaultServiceBinder;
 import com.android.systemui.dagger.DependencyProvider;
 import com.android.systemui.dagger.SysUIComponent;
 import com.android.systemui.dagger.SysUISingleton;
+import com.android.systemui.dagger.SystemUICoreStartableModule;
 import com.android.systemui.dagger.SystemUIModule;
 import com.android.systemui.keyguard.dagger.KeyguardModule;
 import com.android.systemui.keyguard.CustomizationProvider;
@@ -42,21 +43,21 @@ import dagger.Subcomponent;
         DefaultActivityBinder.class,
         DefaultBroadcastReceiverBinder.class,
         DefaultServiceBinder.class,
-        SystemUIGoCoreStartableModule.class,
+        SystemUICoreStartableModule.class,
         KeyguardModule.class,
         RecentsModule.class,
         CentralSurfacesModule.class,
         NotificationInsetsModule.class,
         QsFrameTranslateModule.class,
-        SystemUIGoModule.class})
-public interface SystemUIGoComponent extends SysUIComponent {
+        DerpFestSystemUIModule.class})
+public interface DerpFestSystemUIComponent extends SysUIComponent {
 
     /**
      * Builder for a SysUIComponent.
      */
     @Subcomponent.Builder
     interface Builder extends SysUIComponent.Builder {
-        SystemUIGoComponent build();
+        DerpFestSystemUIComponent build();
     }
 
     /**

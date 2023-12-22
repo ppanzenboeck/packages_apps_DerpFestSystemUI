@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.systemui.go;
+package org.derpfest.systemui;
 
 import com.android.systemui.dagger.GlobalModule;
 import com.android.systemui.dagger.GlobalRootComponent;
@@ -24,22 +24,22 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 /**
- * Root component for Dagger injection on System UI for Android Go.
+ * Root component for Dagger injection on System UI for DerpFest.
  */
 @Singleton
 @Component(modules = {
         GlobalModule.class
 })
-public interface SystemUIGoGlobalRootComponent extends GlobalRootComponent {
-    /** Builder for a SystemUIGoGlobalRootComponent. */
+public interface DerpFestGlobalRootComponent extends GlobalRootComponent {
+    /** Builder for a DerpFestGlobalRootComponent. */
     @Component.Builder
     interface Builder extends GlobalRootComponent.Builder {
-        SystemUIGoGlobalRootComponent build();
+        DerpFestGlobalRootComponent build();
     }
 
     /**
-     * Builder method for the Android Go System UI subcomponent.
+     * Builder method for the DerpFest System UI subcomponent.
      */
     @Override
-    SystemUIGoComponent.Builder getSysUIComponent();
+    DerpFestSystemUIComponent.Builder getSysUIComponent();
 }

@@ -19,7 +19,7 @@ package {
 }
 
 android_library {
-    name: "SystemUIGo-core",
+    name: "DerpFestSystemUI-core",
     srcs: [
         "src/**/*.kt",
         "src/**/*.java",
@@ -37,13 +37,13 @@ android_library {
 }
 
 android_app {
-    name: "SystemUIGo",
+    name: "DerpFestSystemUI",
     defaults: [
         "platform_app_defaults",
         "SystemUI_optimized_defaults",
     ],
     static_libs: [
-        "SystemUIGo-core"
+        "DerpFestSystemUI-core"
     ],
     overrides: [
         "SystemUI",

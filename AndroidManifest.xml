@@ -22,6 +22,6 @@
           coreApp="true">
     <application
         tools:replace="android:appComponentFactory"
-        android:appComponentFactory="com.android.systemui.go.SystemUIGoAppComponentFactory">
+        android:appComponentFactory=".SystemUIAppComponentFactory">
     </application>
 </manifest>
