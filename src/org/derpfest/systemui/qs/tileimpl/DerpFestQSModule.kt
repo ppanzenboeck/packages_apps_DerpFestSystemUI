@@ -29,6 +29,7 @@ import org.derpfest.systemui.qs.tiles.PowerShareTile
 import org.derpfest.systemui.qs.tiles.ReadingModeTile
 import org.derpfest.systemui.qs.tiles.SyncTile
 import org.derpfest.systemui.qs.tiles.UsbTetherTile
+import org.derpfest.systemui.qs.tiles.VpnTile
 import org.derpfest.systemui.qs.tiles.WifiTile
 
 import dagger.Binds
@@ -97,6 +98,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(UsbTetherTile.TILE_SPEC)
     fun bindUsbTetherTile(usbTetherTile: UsbTetherTile): QSTileImpl<*>
+
+    /** Inject VpnTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(VpnTile.TILE_SPEC)
+    fun bindVpnTile(vpnTile: VpnTile): QSTileImpl<*>
 
     /** Inject WifiTile into tileMap in QSModule */
     @Binds
