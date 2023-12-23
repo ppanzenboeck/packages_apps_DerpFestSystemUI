@@ -31,6 +31,7 @@ android_library {
         "SystemUI-core",
         "SystemUIPluginLib",
         "SystemUISharedLib",
+        "vendor.lineage.powershare-V1.0-java",
     ],
     manifest: "AndroidManifest.xml",
     plugins: ["dagger2-compiler"],
