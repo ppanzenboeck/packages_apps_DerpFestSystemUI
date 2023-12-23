@@ -19,6 +19,7 @@ package org.derpfest.systemui.qs.tileimpl;
 
 import com.android.systemui.qs.tileimpl.QSTileImpl
 
+import org.derpfest.systemui.qs.tiles.AmbientDisplayTile
 import org.derpfest.systemui.qs.tiles.CaffeineTile
 import org.derpfest.systemui.qs.tiles.HeadsUpTile
 import org.derpfest.systemui.qs.tiles.SyncTile
@@ -30,6 +31,12 @@ import dagger.multibindings.StringKey
 
 @Module
 interface DerpFestQSModule {
+    /** Inject AmbientDisplayTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(AmbientDisplayTile.TILE_SPEC)
+    fun bindAmbientDisplayTile(ambientDisplayTile: AmbientDisplayTile): QSTileImpl<*>
+
     /** Inject CaffeineTile into tileMap in QSModule */
     @Binds
     @IntoMap
