@@ -20,6 +20,11 @@
           package="com.android.systemui"
           android:sharedUserId="android.uid.systemui"
           coreApp="true">
+
+    <!-- QS Tiles -->
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+
     <application
         tools:replace="android:appComponentFactory"
         android:appComponentFactory=".SystemUIAppComponentFactory">

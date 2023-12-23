@@ -21,6 +21,7 @@ import com.android.systemui.qs.tileimpl.QSTileImpl
 
 import org.derpfest.systemui.qs.tiles.CaffeineTile
 import org.derpfest.systemui.qs.tiles.HeadsUpTile
+import org.derpfest.systemui.qs.tiles.SyncTile
 
 import dagger.Binds
 import dagger.Module
@@ -40,5 +41,11 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(HeadsUpTile.TILE_SPEC)
     fun bindHeadsUpTile(headsUpTile: HeadsUpTile): QSTileImpl<*>
+
+    /** Inject SyncTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(SyncTile.TILE_SPEC)
+    fun bindSyncTile(syncTile: SyncTile): QSTileImpl<*>
 
 }
