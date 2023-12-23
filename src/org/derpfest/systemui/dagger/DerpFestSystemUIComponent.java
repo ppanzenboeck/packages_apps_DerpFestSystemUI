@@ -16,45 +16,42 @@
 
 package org.derpfest.systemui;
 
-import com.android.systemui.dagger.DefaultActivityBinder;
-import com.android.systemui.dagger.DefaultBroadcastReceiverBinder;
-import com.android.systemui.dagger.DefaultServiceBinder;
+import com.android.systemui.dagger.DefaultComponentBinder;
 import com.android.systemui.dagger.DependencyProvider;
-import com.android.systemui.dagger.SysUIComponent;
-import com.android.systemui.dagger.SysUISingleton;
+import com.android.systemui.dagger.SystemUIBinder;
 import com.android.systemui.dagger.SystemUICoreStartableModule;
 import com.android.systemui.dagger.SystemUIModule;
-import com.android.systemui.keyguard.dagger.KeyguardModule;
+import com.android.systemui.dagger.SysUIComponent;
+import com.android.systemui.dagger.SysUISingleton;
+import com.android.systemui.globalactions.ShutdownUiModule;
 import com.android.systemui.keyguard.CustomizationProvider;
-import com.android.systemui.recents.RecentsModule;
-import com.android.systemui.statusbar.dagger.CentralSurfacesModule;
+import com.android.systemui.shade.ShadeModule;
 import com.android.systemui.statusbar.NotificationInsetsModule;
 import com.android.systemui.statusbar.QsFrameTranslateModule;
 
 import dagger.Subcomponent;
 
 /**
- * Dagger Subcomponent for Core System UI on Android Go.
+ * Dagger Subcomponent for Core SysUI used in DerpFest.
  */
 @SysUISingleton
 @Subcomponent(modules = {
+        DefaultComponentBinder.class,
         DependencyProvider.class,
-        SystemUIModule.class,
-        DefaultActivityBinder.class,
-        DefaultBroadcastReceiverBinder.class,
-        DefaultServiceBinder.class,
-        SystemUICoreStartableModule.class,
-        KeyguardModule.class,
-        RecentsModule.class,
-        CentralSurfacesModule.class,
         NotificationInsetsModule.class,
         QsFrameTranslateModule.class,
+        ShadeModule.class,
+        ShutdownUiModule.class,
+        SystemUIBinder.class,
+        SystemUIModule.class,
+        SystemUICoreStartableModule.class,
         DerpFestSystemUIModule.class})
 public interface DerpFestSystemUIComponent extends SysUIComponent {
 
     /**
-     * Builder for a SysUIComponent.
+     * Builder for a DerpFestSystemUIComponent.
      */
+    @SysUISingleton
     @Subcomponent.Builder
     interface Builder extends SysUIComponent.Builder {
         DerpFestSystemUIComponent build();

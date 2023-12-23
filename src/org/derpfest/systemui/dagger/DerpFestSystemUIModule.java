@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 The Android Open Source Project
+ * Copyright (C) 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,14 +25,12 @@ import android.os.Handler;
 
 import com.android.internal.logging.UiEventLogger;
 import com.android.keyguard.KeyguardViewController;
-import com.android.systemui.dagger.GlobalRootComponent;
-import com.android.systemui.dagger.ReferenceSystemUIModule;
-import com.android.systemui.dagger.SysUISingleton;
+import com.android.systemui.battery.BatterySaverModule;
 import com.android.systemui.dagger.qualifiers.Main;
+import com.android.systemui.dagger.SysUISingleton;
 import com.android.systemui.dock.DockManager;
 import com.android.systemui.dock.DockManagerImpl;
 import com.android.systemui.doze.DozeHost;
-import com.android.systemui.globalactions.ShutdownUiModule;
 import com.android.systemui.media.dagger.MediaModule;
 import com.android.systemui.navigationbar.gestural.GestureModule;
 import com.android.systemui.plugins.qs.QSFactory;
@@ -42,12 +40,13 @@ import com.android.systemui.qs.dagger.QSModule;
 import com.android.systemui.qs.tileimpl.QSFactoryImpl;
 import com.android.systemui.recents.Recents;
 import com.android.systemui.recents.RecentsImplementation;
+import com.android.systemui.rotationlock.RotationLockModule;
 import com.android.systemui.screenshot.ReferenceScreenshotModule;
 import com.android.systemui.settings.dagger.MultiUserUtilsModule;
 import com.android.systemui.shade.NotificationShadeWindowControllerImpl;
 import com.android.systemui.shade.ShadeExpansionStateManager;
-import com.android.systemui.shade.ShadeModule;
 import com.android.systemui.statusbar.CommandQueue;
+import com.android.systemui.statusbar.KeyboardShortcutsModule;
 import com.android.systemui.statusbar.NotificationLockscreenUserManager;
 import com.android.systemui.statusbar.NotificationLockscreenUserManagerImpl;
 import com.android.systemui.statusbar.NotificationShadeWindowController;
@@ -73,30 +72,31 @@ import com.android.systemui.statusbar.policy.SensorPrivacyControllerImpl;
 import com.android.systemui.volume.dagger.VolumeModule;
 import com.android.systemui.wallpapers.dagger.WallpaperModule;
 
-import javax.inject.Named;
-
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;
 
+import javax.inject.Named;
+
 /**
  * A dagger module for overriding the default implementations of injected System UI components on
- * Android Go. This is forked from {@link ReferenceSystemUIModule}
+ * DerpFest. This is forked from {@link ReferenceSystemUIModule}
  */
 @Module(includes = {
         AospPolicyModule.class,
+        BatterySaverModule.class,
         GestureModule.class,
         MediaModule.class,
         MultiUserUtilsModule.class,
         PowerModule.class,
         QSModule.class,
         ReferenceScreenshotModule.class,
-        ShadeModule.class,
-        ShutdownUiModule.class,
-        StartCentralSurfacesModule.class,
+        RotationLockModule.class,
         StatusBarEventsModule.class,
+        StartCentralSurfacesModule.class,
+        VolumeModule.class,
         WallpaperModule.class,
-        VolumeModule.class
+        KeyboardShortcutsModule.class
 })
 public abstract class DerpFestSystemUIModule {
 
@@ -104,7 +104,7 @@ public abstract class DerpFestSystemUIModule {
     @Provides
     @Named(LEAK_REPORT_EMAIL_NAME)
     static String provideLeakReportEmail() {
-        return "buganizer-system+700073@google.com";
+        return "";
     }
 
     @Binds
@@ -130,6 +130,7 @@ public abstract class DerpFestSystemUIModule {
         return ispC;
     }
 
+    /** */
     @Binds
     @SysUISingleton
     public abstract QSFactory bindQSFactory(QSFactoryImpl qsFactoryImpl);

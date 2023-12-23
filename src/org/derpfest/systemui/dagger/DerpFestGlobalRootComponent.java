@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 The Android Open Source Project
+ * Copyright (C) 2023 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,21 +24,22 @@ import javax.inject.Singleton;
 import dagger.Component;
 
 /**
- * Root component for Dagger injection on System UI for DerpFest.
+ * Root component for Dagger injection used in DerpFest.
  */
 @Singleton
-@Component(modules = {
-        GlobalModule.class
-})
+@Component(modules = {GlobalModule.class})
 public interface DerpFestGlobalRootComponent extends GlobalRootComponent {
-    /** Builder for a DerpFestGlobalRootComponent. */
+
+    /**
+     * Builder for a DerpFestGlobalRootComponent.
+     */
     @Component.Builder
     interface Builder extends GlobalRootComponent.Builder {
         DerpFestGlobalRootComponent build();
     }
 
     /**
-     * Builder method for the DerpFest System UI subcomponent.
+     * Builder for a {@link DerpFestSysUIComponent}, which makes it a subcomponent of this class.
      */
     @Override
     DerpFestSystemUIComponent.Builder getSysUIComponent();
