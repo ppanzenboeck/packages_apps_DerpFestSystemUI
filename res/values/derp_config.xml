@@ -18,10 +18,6 @@
 -->
 
 <resources>
-    <!-- SystemUIFactory component -->
-    <string name="config_systemUIFactoryComponent" translatable="false">
-        org.derpfest.systemui.DerpFestSystemUIInitializer
-    </string>
 
     <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
     <string name="quick_settings_tiles_stock" translatable="false">

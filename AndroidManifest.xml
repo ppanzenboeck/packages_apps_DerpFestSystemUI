@@ -29,6 +29,6 @@
 
     <application
         tools:replace="android:appComponentFactory"
-        android:appComponentFactory=".SystemUIAppComponentFactory">
+        android:appComponentFactory="org.derpfest.systemui.DerpFestSystemUIAppComponentFactory">
     </application>
 </manifest>
