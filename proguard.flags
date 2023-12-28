@@ -2,3 +2,8 @@
 
 # Proguard rules not owned by core SystemUI
 -keep class org.derpfest.systemui.** { *; }
+
+-keep,allowoptimization,allowaccessmodification class org.derpfest.systemui.DaggerDerpFestGlobalRootComponent** { !synthetic *; }
+
+# TODO(b/284411203) delete this
+-keep,allowoptimization,allowaccessmodification class com.android.systemui.dagger.DaggerReferenceGlobalRootComponent** { !synthetic *; }
