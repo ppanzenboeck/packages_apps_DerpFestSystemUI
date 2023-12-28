@@ -28,4 +28,7 @@
         internet,wifi,cell,bt,flashlight,dnd,alarm,airplane,nfc,controls,wallet,rotation,battery,cast,screenrecord,mictoggle,cameratoggle,location,hotspot,inversion,saver,dark,work,night,reverse,reduce_brightness,qr_code_scanner,onehanded,color_correction,dream,font_scaling,ambient_display,aod,caffeine,dataswitch,heads_up,powershare,reading_mode,sync,usb_tether,vpn,vpn_tethering
     </string>
 
+    <!-- Determines whether the shell features all run on another thread. -->
+    <bool name="config_enableShellMainThread">true</bool>
+
 </resources>
