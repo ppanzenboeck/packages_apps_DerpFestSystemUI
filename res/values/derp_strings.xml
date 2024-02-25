@@ -60,4 +60,7 @@
     <string name="vpn_tethering_changed_off">VPN tethering turned off.</string>
     <string name="vpn_tethering_changed_on">VPN tethering turned on.</string>
 
+    <!-- FastCharge QS tile -->
+    <string name="quick_settings_fastcharge_label">Fast charge</string>
+
 </resources>

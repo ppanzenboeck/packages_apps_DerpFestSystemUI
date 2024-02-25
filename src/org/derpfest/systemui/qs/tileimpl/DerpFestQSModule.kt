@@ -24,6 +24,7 @@ import org.derpfest.systemui.qs.tiles.AODTile
 import org.derpfest.systemui.qs.tiles.CaffeineTile
 import org.derpfest.systemui.qs.tiles.CellularTile
 import org.derpfest.systemui.qs.tiles.DataSwitchTile
+import org.derpfest.systemui.qs.tiles.FastChargeTile
 import org.derpfest.systemui.qs.tiles.HeadsUpTile
 import org.derpfest.systemui.qs.tiles.PowerShareTile
 import org.derpfest.systemui.qs.tiles.ReadingModeTile
@@ -69,6 +70,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(DataSwitchTile.TILE_SPEC)
     fun bindDataSwitchTile(dataSwitchTile: DataSwitchTile): QSTileImpl<*>
+
+    /** Inject FastChargeTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(FastChargeTile.TILE_SPEC)
+    fun bindFastChargeTile(fastChargeTile: FastChargeTile): QSTileImpl<*>
 
     /** Inject HeadsUpTile into tileMap in QSModule */
     @Binds
