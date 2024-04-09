@@ -39,7 +39,6 @@ import com.android.internal.logging.MetricsLogger;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.telephony.IccCardConstants;
 import com.android.internal.telephony.TelephonyIntents;
-import com.android.systemui.R;
 import com.android.systemui.dagger.qualifiers.Background;
 import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.plugins.ActivityStarter;
@@ -52,6 +51,7 @@ import com.android.systemui.qs.logging.QSLogger;
 import com.android.systemui.qs.pipeline.domain.interactor.PanelInteractor;
 import com.android.systemui.qs.tileimpl.QSTileImpl;
 import com.android.systemui.qs.tileimpl.QSTileImpl.ResourceIcon;
+import com.android.systemui.res.R;
 
 import java.util.List;
 
