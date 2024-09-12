@@ -28,6 +28,8 @@ import com.android.systemui.statusbar.NotificationInsetsModule;
 import com.android.systemui.statusbar.QsFrameTranslateModule;
 import com.android.systemui.unfold.SysUIUnfoldModule;
 
+import org.derpfest.systemui.keyguard.DerpFestKeyguardSliceProvider;
+
 import dagger.Subcomponent;
 
 /**
@@ -59,4 +61,9 @@ public interface DerpFestSystemUIComponent extends SysUIComponent {
      * Member injection into the supplied argument.
      */
     void inject(CustomizationProvider customizationProvider);
+
+    /**
+     * Member injection into the supplied argument.
+     */
+    void inject(DerpFestKeyguardSliceProvider keyguardSliceProvider);
 }
