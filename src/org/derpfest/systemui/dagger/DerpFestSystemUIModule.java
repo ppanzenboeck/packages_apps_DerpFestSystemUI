@@ -29,6 +29,7 @@ import com.android.systemui.ScreenDecorationsModule;
 import com.android.systemui.accessibility.AccessibilityModule;
 import com.android.systemui.accessibility.SystemActionsModule;
 import com.android.systemui.accessibility.data.repository.AccessibilityRepositoryModule;
+import com.android.systemui.assist.AssistManager;
 import com.android.systemui.battery.BatterySaverModule;
 import com.android.systemui.dagger.qualifiers.Main;
 import com.android.systemui.dagger.SysUISingleton;
@@ -93,6 +94,7 @@ import com.android.systemui.util.kotlin.SysUICoroutinesModule;
 import com.android.systemui.volume.dagger.VolumeModule;
 import com.android.systemui.wallpapers.dagger.WallpaperModule;
 
+import org.derpfest.systemui.assist.DerpFestAssistManager;
 import org.derpfest.systemui.qs.tileimpl.DerpFestQSModule;
 
 import dagger.Binds;
@@ -217,4 +219,7 @@ public abstract class DerpFestSystemUIModule {
 
     @Binds
     abstract DozeHost provideDozeHost(DozeServiceHost dozeServiceHost);
+
+    @Binds
+    abstract AssistManager bindAssistManager(DerpFestAssistManager assistManager);
 }
