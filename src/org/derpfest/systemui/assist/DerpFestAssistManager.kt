@@ -1,6 +1,7 @@
 package org.derpfest.systemui.assist
 
 import android.app.ActivityManager
+import android.app.StatusBarManager
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
@@ -13,6 +14,7 @@ import com.android.systemui.assist.AssistManager
 import com.android.systemui.assist.PhoneStateMonitor
 import com.android.systemui.assist.domain.interactor.AssistInteractor
 import com.android.systemui.assist.ui.DefaultUiController
+import com.android.systemui.camera.CameraGestureHelper
 import com.android.systemui.dagger.SysUISingleton
 import com.android.systemui.dagger.qualifiers.Background
 import com.android.systemui.dagger.qualifiers.Main
@@ -48,6 +50,7 @@ constructor(
   @Main private val uiHandler: Handler,
   userTracker: UserTracker,
   displayTracker: DisplayTracker,
+  private val cameraGestureHelper: Lazy<CameraGestureHelper>,
   private val secureSettings: SecureSettings,
   selectedUserInteractor: SelectedUserInteractor,
   activityManager: ActivityManager,
@@ -101,6 +104,13 @@ constructor(
             uiHandler,
             null,
           )
+          return
+        }
+        1 -> {
+          // Open camera
+          cameraGestureHelper
+            .get()
+            .launchCamera(StatusBarManager.CAMERA_LAUNCH_SOURCE_POWER_DOUBLE_TAP)
           return
         }
         else -> return super.startAssist(args)
