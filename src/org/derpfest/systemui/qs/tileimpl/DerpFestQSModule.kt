@@ -18,6 +18,7 @@
 package org.derpfest.systemui.qs.tileimpl;
 
 import com.android.systemui.qs.tileimpl.QSTileImpl
+import com.android.systemui.qs.tiles.VolumeControlTile
 
 import org.derpfest.systemui.qs.tiles.AmbientDisplayTile
 import org.derpfest.systemui.qs.tiles.AODTile
@@ -134,6 +135,12 @@ interface DerpFestQSModule {
     @IntoMap
     @StringKey(UsbTetherTile.TILE_SPEC)
     fun bindUsbTetherTile(usbTetherTile: UsbTetherTile): QSTileImpl<*>
+
+    /** Inject VolumeControlTile into tileMap in QSModule */
+    @Binds
+    @IntoMap
+    @StringKey(VolumeControlTile.TILE_SPEC)
+    fun bindVolumeControlTile(volumeControlTile: VolumeControlTile): QSTileImpl<*>
 
     /** Inject VpnTile into tileMap in QSModule */
     @Binds
