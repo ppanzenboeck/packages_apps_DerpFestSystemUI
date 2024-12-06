@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.provider.Settings.SettingNotFoundException
 import android.view.WindowManager
+import com.android.app.viewcapture.ViewCaptureAwareWindowManager
 import com.android.internal.app.AssistUtils
 import com.android.internal.util.ScreenshotHelper
 import com.android.systemui.assist.AssistLogger
@@ -55,6 +56,7 @@ constructor(
   selectedUserInteractor: SelectedUserInteractor,
   activityManager: ActivityManager,
   interactor: AssistInteractor,
+  viewCaptureAwareWindowManager: ViewCaptureAwareWindowManager,
   @Background backgroundScope: CoroutineScope,
 ) :
   AssistManager(
@@ -74,6 +76,7 @@ constructor(
     selectedUserInteractor,
     activityManager,
     interactor,
+    viewCaptureAwareWindowManager,
   ) {
 
   private val assistActionFlow =
