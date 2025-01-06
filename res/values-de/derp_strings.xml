@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     SPDX-FileCopyrightText: 2023 The LibreMobileOS Foundation
+     SPDX-FileCopyrightText: 2024 DerpFest AOSP
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <!-- Ambient display QS tile -->
+    <string name="quick_settings_ambient_display_label">Inaktivitätsdisplay</string>
+    <string name="accessibility_quick_settings_ambient_display_off">Inaktivitätsdisplay aus.</string>
+    <string name="accessibility_quick_settings_ambient_display_on">Inaktivitätsdisplay an.</string>
+
+    <!-- AOD QS tile -->
+    <string name="quick_settings_aod_label">AOD</string>
+    <string name="quick_settings_aod_off_powersave_label">AOD aus\nEnergiesparmodus</string>
+
+    <!-- Caffeine QS tile -->
+    <string name="quick_settings_caffeine_label">Koffein</string>
+    <string name="accessibility_quick_settings_caffeine_off">Koffein aus.</string>
+    <string name="accessibility_quick_settings_caffeine_on">Koffein an.</string>
+
+    <!-- DataSwitch Tile -->
+    <string name="qs_data_switch_label">SIM-Karte für mobile Daten wechseln</string>
+
+    <!-- Heads up QS tile -->
+    <string name="quick_settings_heads_up_label">Pop-up</string>
+    <string name="accessibility_quick_settings_heads_up_off">Pop-up aus.</string>
+    <string name="accessibility_quick_settings_heads_up_on">Pop-up an.</string>
+
+    <!-- PowerShare QS tile -->
+    <string name="quick_settings_powershare_label">Battery Share</string>
+    <string name="quick_settings_powershare_off_powersave_label">Battery Share aus\nEnergiesparmodus</string>
+    <string name="quick_settings_powershare_off_low_battery_label">Battery Share aus\nAkkustand zu niedrig</string>
+    <string name="quick_settings_powershare_enabled_label">Battery Share ist aktiviert</string>
+
+    <!-- Reader mode QS tile -->
+    <string name="quick_settings_reading_mode">Lesemodus</string>
+    <string name="accessibility_quick_settings_reading_mode_on">Lesemodus an.</string>
+    <string name="accessibility_quick_settings_reading_mode_off">Lesemodus aus.</string>
+
+    <!-- Sync QS tile -->
+    <string name="quick_settings_sync_label">Synchronisation</string>
+    <string name="accessibility_quick_settings_sync_off">Synchronisierung aus.</string>
+    <string name="accessibility_quick_settings_sync_on">Synchronisierung an.</string>
+
+    <!-- USB tethering QS tile -->
+    <string name="quick_settings_usb_tether_label">USB-Tethering</string>
+
+    <!-- VPN QS tile -->
+    <string name="quick_settings_vpn_label">VPN</string>
+    <string name="quick_settings_vpn_connect_dialog_title">Verbinden mit\u2026</string>
+    <string name="vpn_credentials_hint">Bitte Zugangsdaten eingeben, um sich mit <xliff:g id="name">%s</xliff:g> zu verbinden</string>
+    <string name="vpn_credentials_username">Benutzername</string>
+    <string name="vpn_credentials_password">Passwort</string>
+    <string name="vpn_credentials_dialog_connect">Verbinden</string>
+
+    <!-- VPN tethering QS tile -->
+    <string name="vpn_tethering_label">VPN-Tethering</string>
+    <string name="vpn_tethering_changed_off">VPN-Tethering aus.</string>
+    <string name="vpn_tethering_changed_on">VPN-Tethering an.</string>
+
+    <!-- FastCharge QS tile -->
+    <string name="quick_settings_fastcharge_label">Schnellladung</string>
+
+    <!-- Sound QS Tile -->
+    <string name="quick_settings_sound_label">Ton</string>
+    <string name="quick_settings_sound_ring">Klingeln</string>
+    <string name="quick_settings_sound_vibrate">Vibrieren</string>
+    <string name="quick_settings_sound_silent">Still</string>
+
+    <!-- Compass QS Tile -->
+    <string name="quick_settings_compass_label">Kompass</string>
+    <string name="quick_settings_compass_value"><xliff:g id="Grad">%1$.0f</xliff:g>\u00b0 <xliff:g id="Richtung">%2$s</xliff:g></string>
+    <string name="quick_settings_compass_init">Vorbereitung läuft \u2026</string>
+    <string name="quick_settings_compass_N">N</string>
+    <string name="quick_settings_compass_NE">NO</string>
+    <string name="quick_settings_compass_E">O</string>
+    <string name="quick_settings_compass_SE">SO</string>
+    <string name="quick_settings_compass_S">S</string>
+    <string name="quick_settings_compass_SW">SW</string>
+    <string name="quick_settings_compass_W">W</string>
+    <string name="quick_settings_compass_NW">NW</string>
+
+    <!-- Screenshot Tile -->
+    <string name="screenshot_long_press">Gedrückt halten - ausgewählter Bereich</string>
+
+    <!-- Language toggle tile -->
+    <string name="quick_settings_locale_label">Sprache</string>
+    <string name="quick_settings_locale_more_locales_toast">Bitte zunächst mehr als eine Sprache hinzufügen</string>
+</resources>
