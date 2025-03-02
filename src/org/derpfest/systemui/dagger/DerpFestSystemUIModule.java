@@ -49,7 +49,6 @@ import com.android.systemui.navigationbar.NavigationBarControllerModule;
 import com.android.systemui.navigationbar.gestural.GestureModule;
 import com.android.systemui.plugins.qs.QSFactory;
 import com.android.systemui.plugins.statusbar.StatusBarStateController;
-import com.android.systemui.power.dagger.PowerModule;
 import com.android.systemui.qs.dagger.QSModule;
 import com.android.systemui.qs.tileimpl.QSFactoryImpl;
 import com.android.systemui.reardisplay.RearDisplayModule;
@@ -98,6 +97,7 @@ import com.android.systemui.wallpapers.dagger.WallpaperModule;
 import org.derpfest.systemui.assist.DerpFestAssistManager;
 import org.derpfest.systemui.keyguard.DerpFestKeyguardIndicationController;
 import org.derpfest.systemui.qs.tileimpl.DerpFestQSModule;
+import org.derpfest.systemui.power.dagger.DerpFestPowerModule;
 
 import dagger.Binds;
 import dagger.Module;
@@ -128,7 +128,6 @@ import javax.inject.Named;
         MultiUserUtilsModule.class,
         NavigationBarControllerModule.class,
         NearbyMediaDevicesManager.StartableModule.class,
-        PowerModule.class,
         QSModule.class,
         RearDisplayModule.class,
         ReferenceScreenshotModule.class,
@@ -147,6 +146,7 @@ import javax.inject.Named;
         VolumeModule.class,
         WallpaperModule.class,
         ShortcutHelperModule.class,
+        DerpFestPowerModule.class,
         DerpFestQSModule.class
 })
 public abstract class DerpFestSystemUIModule {
