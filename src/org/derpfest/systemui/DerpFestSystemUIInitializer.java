@@ -20,7 +20,7 @@ import android.content.Context;
 
 import com.android.systemui.SystemUIInitializer;
 import com.android.systemui.dagger.GlobalRootComponent;
-import org.derpfest.systemui.DaggerDerpFestGlobalRootComponent;
+import org.derpfest.systemui.dagger.DaggerDerpFestGlobalRootComponent;
 
 /**
  * DerpFest variant {@link SystemUIInitializer}, that substitutes default {@link GlobalRootComponent} for

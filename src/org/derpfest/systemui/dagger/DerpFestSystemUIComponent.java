@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.derpfest.systemui;
+package org.derpfest.systemui.dagger;
 
 import com.android.systemui.dagger.DefaultComponentBinder;
 import com.android.systemui.dagger.DependencyProvider;
