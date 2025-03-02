@@ -103,4 +103,7 @@
     <string name="quick_settings_music_loading">Loading...</string>
     <string name="quick_settings_music_no_player">No player connected</string>
     <string name="quick_settings_music_last_played">Last played: %1$s</string>
+    
+    <!-- Adaptive charging -->
+    <string name="adaptive_charging_time_estimate">Adaptive charging • Full by <xliff:g id="charging_time_left" example="3 hours">%1$s</xliff:g></string>
 </resources>

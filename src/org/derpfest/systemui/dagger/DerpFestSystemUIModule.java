@@ -66,6 +66,7 @@ import com.android.systemui.shade.ShadeExpansionStateManager;
 import com.android.systemui.shade.ShadeModule;
 import com.android.systemui.statusbar.CommandQueue;
 import com.android.systemui.statusbar.KeyboardShortcutsModule;
+import com.android.systemui.statusbar.KeyguardIndicationController;
 import com.android.systemui.statusbar.NotificationLockscreenUserManager;
 import com.android.systemui.statusbar.NotificationLockscreenUserManagerImpl;
 import com.android.systemui.statusbar.NotificationShadeWindowController;
@@ -95,6 +96,7 @@ import com.android.systemui.volume.dagger.VolumeModule;
 import com.android.systemui.wallpapers.dagger.WallpaperModule;
 
 import org.derpfest.systemui.assist.DerpFestAssistManager;
+import org.derpfest.systemui.keyguard.DerpFestKeyguardIndicationController;
 import org.derpfest.systemui.qs.tileimpl.DerpFestQSModule;
 
 import dagger.Binds;
@@ -222,4 +224,8 @@ public abstract class DerpFestSystemUIModule {
 
     @Binds
     abstract AssistManager bindAssistManager(DerpFestAssistManager assistManager);
+    
+    @Binds
+    abstract KeyguardIndicationController bindKeyguardIndicationController(
+            DerpFestKeyguardIndicationController impl);
 }

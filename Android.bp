@@ -28,6 +28,7 @@ android_library {
         "res",
     ],
     static_libs: [
+        "adaptivecharging",
         "SystemUI-core",
         "SystemUIPluginLib",
         "SystemUISharedLib",
